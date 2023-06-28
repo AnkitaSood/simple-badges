@@ -1,0 +1,48 @@
+
+@mixin badge-styles {
+  .badge {
+    border-radius: 0.2rem;
+    display: inline-block;
+    padding: 0.3125rem 0.5rem 0.3125rem 0.5rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+
+    //badge size variations begin
+    &-small {
+      border-radius: 0.2rem;
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+    }
+
+    // semantic badges begin
+    &__informative {
+      background: #decde8;
+    }
+
+    &__caution {
+      background: #f4efc1;
+    }
+
+    &__neutral {
+      background: #e3e3e3;
+    }
+
+    &__positive {
+      background: #d7ecdc;
+    }
+  }
+}
+
+
+:host {
+  @include badge-styles;
+  display: block;
+
+  div {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+}
